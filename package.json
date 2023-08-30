@@ -1,7 +1,7 @@
 {
   "name": "qoa-chatbot-v2",
   "version": "0.1.0",
-  "homepage": "https://JabuKekana.github.io/qoa-chatbot-v2",
+  "homepage": "https://qoa-devs.github.io/qoa-chatbot-v2",
   "private": true,
   "dependencies": {
     "@tensorflow-models/qna": "^1.0.1",
