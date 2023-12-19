@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import * as tf from "@tensorflow/tfjs";
 import * as qna from "@tensorflow-models/qna";
-import * as use from "@tensorflow-models/universal-sentence-encoder"; // Correct import statement
+import * as use from "@tensorflow-models/universal-sentence-encoder";
 import { Blocks } from "react-loader-spinner";
 import { Fragment } from "react";
 
@@ -37,7 +37,7 @@ function App() {
           { question: "", answer: noQuestionAnswer.text },
         ];
         setChatHistory(updatedChatHistory);
-        return; // Exit the function
+        return;
       }
 
       // Encode the user question using Universal Sentence Encoder
@@ -46,10 +46,6 @@ function App() {
 
       const answers = await model.findAnswers(question, passage);
 
-      // If needed, you can now process the Universal Sentence Encoder's vector along with the answers
-      // For example, to find the most relevant answer based on question similarity
-
-      // Rest of the function remains the same
       let highestScoreAnswer;
       if (answers.length === 0) {
         highestScoreAnswer = {
@@ -66,7 +62,7 @@ function App() {
         { question, answer: highestScoreAnswer.text },
       ];
       setChatHistory(updatedChatHistory);
-      questionRef.current.value = ""; // Clear the question input field
+      questionRef.current.value = ""; 
       console.log(updatedChatHistory);
     }
   };
@@ -78,7 +74,7 @@ function App() {
       setModel(qnaModel);
       console.log("Q&A Model loaded.");
 
-      const sentenceEncoderModel = await use.load(); // Use the `use` variable to load the Universal Sentence Encoder
+      const sentenceEncoderModel = await use.load(); 
       setSentenceEncoderModel(sentenceEncoderModel);
       console.log("Universal Sentence Encoder loaded.");
     };
